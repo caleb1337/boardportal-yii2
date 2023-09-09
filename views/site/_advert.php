@@ -14,7 +14,7 @@ use yii\helpers\Html;
                 <h4>
                     <i class="fa fa-price-marker"></i>
                     <b class="text-dark">
-<!--                        --><?php //= Html::encode(Yii::$app->formatter->asCurrency("{$model->price}", '₽', '')) ?>
+                        <?= Html::encode(Yii::$app->formatter->asCurrency("{$model->price}", 'RUB')) ?>
                         <?= Html::encode($model->price) ?>
                     </b>
 
@@ -45,7 +45,7 @@ use yii\helpers\Html;
                     echo Html::encode(\Yii::$app->formatter->asRelativeTime($model->date_of_placement, 'now')) ; ?>
                 </h5>
             </li>
-            <?= Html::a('Просмотреть', "index.php?r=site%2Fview&advert_id={$model->advert_id}", ['class' => 'btn btn-warning w-50 align-self-center']) ?>
+            <?= Html::a('Просмотреть', ['site/view' , 'advert_id' => $model->advert_id], ['class' => 'btn btn-warning w-50 align-self-center']) ?>
         </ul>
     </div>
     <div class="job-img align-self-center">

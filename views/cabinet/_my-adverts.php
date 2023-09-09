@@ -11,7 +11,7 @@ use yii\helpers\Html;
                 <h4>
                     <i class="fa fa-price-marker"></i>
                     <b class="text-dark">
-                        <?= Html::encode(Yii::$app->formatter->asCurrency("{$model->price}",'₽',''))?>
+                        <?= Html::encode(Yii::$app->formatter->asCurrency("{$model->price}",'RUB'))?>
                     </b>
 
 

@@ -92,13 +92,13 @@ $this->beginBody() ?>
                                             'linkOptions' => ['class' => 'nav-link text-dark']
                                         ],
                                         [
-                                            'label' => Html::beginForm(['/site/logout'])
+                                            'label' => Html::beginForm(['/cabinet/logout'])
                                                 . Html::submitButton(
                                                     'Выйти' . ' (' . \Yii::$app->user->identity->login . ')',
                                                     ['class' => 'nav-link text-dark logout p-0']
                                                 )
                                                 . Html::endForm(),
-                                            'url' => ['/site/logout'],
+                                            'url' => ['/cabinet/logout'],
                                             'linkOptions' => ['class' => 'text-dark']
                                         ],
 
