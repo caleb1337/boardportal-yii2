@@ -18,6 +18,7 @@ class m230830_100033_create_categories_table extends Migration
             'title' => $this->text(),
             'description' => $this->text(),
             'key_words' => $this->text(),
+            'alias' => $this->text(),
         ]);
     }
 
