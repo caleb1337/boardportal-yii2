@@ -14,7 +14,8 @@ use yii\helpers\Html;
                 <h4>
                     <i class="fa fa-price-marker"></i>
                     <b class="text-dark">
-                        <?= Html::encode(Yii::$app->formatter->asCurrency("{$model->price}", 'RUB')) ?>
+<!--                        --><?php //var_dump($model->adverts[0]->price); die; ?>
+                        <?= Html::encode(Yii::$app->formatter->asCurrency("{$model->adverts[0]->price}", 'RUB')) ?>
                     </b>
 
 
@@ -24,14 +25,14 @@ use yii\helpers\Html;
                 <h5>
                     <i class="fa fa-map-marker"></i>
                     <b class="text-dark">Местоположение:</b>
-                    <?= Html::encode($model->location) ?>
+                    <?= Html::encode($model->adverts[0]->location) ?>
                 </h5>
             </li>
             <li class="mb-3">
                 <h5>
                     <i class="fa fa-pie-chart"></i>
                     <b class="text-dark">Категория:</b>
-                    <?= Html::encode($model->category->title) ?>
+                    <?= Html::encode($model->adverts[0]->category->title) ?>
                 </h5>
             </li>
             <li>
@@ -39,12 +40,10 @@ use yii\helpers\Html;
                     <i class="fa fa-clock-o"></i>
                     <b class="text-dark">Дата публикации:</b>
                     <?php
-                    \Yii::$app->formatter->locale = 'ru-RU';
-                    \Yii::$app->timeZone = 'Europe/Moscow';
-                    echo Html::encode(\Yii::$app->formatter->asRelativeTime($model->date_of_placement, 'now')) ; ?>
+                    echo Html::encode(\Yii::$app->formatter->asRelativeTime($model->adverts[0]->date_of_placement, 'now')) ; ?>
                 </h5>
             </li>
-            <?= Html::a('Просмотреть', ['site/view' , 'advert_id' => $model->advert_id], ['class' => 'btn btn-warning w-50 align-self-center']) ?>
+            <?= Html::a('Просмотреть', ['site/view' , 'advert_id' => $model->adverts[0]->advert_id], ['class' => 'btn btn-warning w-50 align-self-center']) ?>
         </ul>
     </div>
     <div class="job-img align-self-center">

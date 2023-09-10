@@ -51,7 +51,12 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
-                'site/view/<advert_id:\d+>' => 'site/view',
+                '' => 'site/index',
+                'login' => 'site/login',
+                'register' => 'site/register',
+                'about' => 'site/about',
+                'view/<advert_id:\d+>' => 'site/view',
+                'search-by-category/<alias:\w+>' => 'site/search-by-category',
             ],
         ],
     ],

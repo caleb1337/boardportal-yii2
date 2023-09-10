@@ -59,7 +59,7 @@ $this->beginBody() ?>
                                     'url' => ['/site/index'],
                                     'linkOptions' => ['class' => 'active']
                                 ],
-                                ['label' => 'О нас', 'url' => ['/site/about']],
+                                ['label' => 'О нас', 'url' => ['/about']],
                                 Yii::$app->user->isGuest ? ([
                                     'label' => 'Регистрация',
                                     'url' => ['site/register']

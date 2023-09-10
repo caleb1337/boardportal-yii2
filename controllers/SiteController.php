@@ -66,44 +66,32 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-//        $categories = Category::find()->all();
-        $categories = new ActiveDataProvider([
+        $dataProvider = new ActiveDataProvider([
             'query' => Category::find(),
             'pagination' => [
                 'pageSize' => 5,
             ]
         ]);
 
-        $dataProvider = new ActiveDataProvider([
-            'query' => Advert::find()->where(['status' => 1,]),
-            'pagination' => [
-                'pageSize' => 10,
-            ],
-//            'sort' => [
-//                'defaultOrder' => [
-//                    'created_at' => SORT_DESC,
-//                    'title' => SORT_ASC,
-//                ]
-//            ],
-        ]);
-        return $this->render('index', compact('dataProvider', 'categories'));
+        return $this->render('index', compact('dataProvider'));
     }
 
-    public function actionSearchByCategory($category_id)
+    public function actionSearchByCategory($alias)
     {
-        $categories = new ActiveDataProvider([
+        // ранее $categories
+        $dataProviderCategories = new ActiveDataProvider([
             'query' => Category::find(),
             'pagination' => [
                 'pageSize' => 10,
             ]
         ]);
-        $dataProvider = new ActiveDataProvider([
-            'query' => Advert::find()->where(['category_id' => $category_id]),
+        $dataProviderAdverts = new ActiveDataProvider([
+            'query' => Category::find()->where(['alias' => $alias]),
             'pagination' => [
-                'pageSize' => 5,
+                'pageSize' => 10,
             ]
         ]);
-        return $this->render('index', compact('dataProvider', 'categories'));
+        return $this->render('search-by-category', compact('dataProviderCategories', 'dataProviderAdverts' ));
     }
 
 

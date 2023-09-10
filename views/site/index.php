@@ -17,7 +17,7 @@ $this->title = 'Главная';
     '<ul class="list-group list-group-horizontal">' ?>
 
     <?= ListView::widget([
-        'dataProvider' => $categories,
+        'dataProvider' => $dataProvider,
         'itemView' => '_categories',
         'layout' => "{items}",
         'options' => ['class' => 'd-flex'],
