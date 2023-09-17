@@ -26,7 +26,6 @@ class AppAsset extends AssetBundle
         'css/font-awesome-4.7.0.min.css',
         'css/ion.rangeSlider.css',
         'css/ion.rangeSlider.skinFlat.css',
-        'css/nice-select.css',
         'css/owl-carousel.min.css',
         'css/style.css',
         'fonts/flat-icon/flaticon.css',
@@ -35,11 +34,10 @@ class AppAsset extends AssetBundle
 //        'js/vendor/bootstrap-4.1.3.min.js',
         'js/vendor/gmaps.min.js',
         'js/vendor/ion.rangeSlider.js',
-//        'js/vendor/jquery.nice-select.min.js',
 //        'js/vendor/jquery-2.2.4.min.js',
         'js/vendor/owl-carousel.min.js',
         'js/vendor/wow.min.js',
-        'js/main.js',
+//        'js/main.js',
     ];
 
     public $depends = [

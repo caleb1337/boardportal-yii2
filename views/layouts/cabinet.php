@@ -136,7 +136,7 @@ $this->beginBody() ?>
                     'items' => [
                             [
                                     'label' => 'Личный кабинет',
-                                    'url' => ['/cabinet/index'],
+                                    'url' => ['/cabinet'],
                                     'linkOptions' => ['class' => 'nav-link']
                             ],
                             ['label' => 'Мои объявления', 'url' => ['/cabinet/show-my-adverts']],
